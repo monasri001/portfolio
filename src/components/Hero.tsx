@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center px-4 md:pt-20 pt-10"
+      className="min-h-screen flex items-center md:pt-20 pt-10"
     >
       <div className="container mx-auto">
         
