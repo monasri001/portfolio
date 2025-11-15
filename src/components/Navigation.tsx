@@ -33,7 +33,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-2xl font-bold text-gradient">
-            Monasri Mohandoss
+            Welcome
           </a>
 
           {/* Desktop Navigation */}
