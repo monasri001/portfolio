@@ -109,7 +109,7 @@ export const Projects = () => {
                   )}
                 </div>
 
-                GitHub Button Only
+                
                 {project.github !== "#" && (
                   <div className="pt-4">
                     <Button
