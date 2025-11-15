@@ -7,7 +7,7 @@ const skillCategories = [
   },
   {
     category: "AI & ML",
-    skills: ["Python", "TensorFlow", "PyTorch", "LangChain", "SciKit-learn", "Hugging Face","Streamlit"],
+    skills: ["Python", "TensorFlow", "PyTorch", "LangChain", "SciKit-learn", "Hugging Face", "Streamlit"],
   },
   {
     category: "Databases & Cloud",
@@ -15,7 +15,7 @@ const skillCategories = [
   },
   {
     category: "Tools & Others",
-    skills: ["Excel","Git","Postman", "Docker", "n8n", "Power BI",  "Selenium", "UiPath", "CrewAI"],
+    skills: ["Excel", "Git", "Postman", "Docker", "n8n", "Power BI", "Selenium", "UiPath", "CrewAI"],
   },
 ];
 
@@ -25,23 +25,18 @@ export const Skills = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
       { threshold: 0.1 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 px-4 bg-background/50">
       <div className="container mx-auto">
-        
+
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
@@ -52,18 +47,15 @@ export const Skills = () => {
           </p>
         </div>
 
-        {/* Slider */}
-        <div
-          className="flex gap-6 overflow-x-auto px-2 pb-4 snap-x snap-mandatory scrollbar-hide"
-          style={{ scrollBehavior: "smooth" }}
-        >
-          {skillCategories.map((category, categoryIndex) => (
+        {/* 2x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillCategories.map((category, i) => (
             <div
               key={category.category}
-              className={`glass-card min-w-[280px] snap-center ${
+              className={`glass-card p-6 ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+              style={{ animationDelay: `${i * 0.1}s` }}
             >
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 {category.category}
