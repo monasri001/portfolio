@@ -14,7 +14,6 @@ const data = {
       "AWS Community Event – St. Joseph’s College, OMR",
       "FOSS Meetup – Pondicherry (2024)",
     ],
-    
   },
 
   certifications: {
@@ -32,9 +31,9 @@ const data = {
     icon: Users,
     title: "Activities",
     items: [
-      "Technical Writer – Kaggle",
-      "Student Dev Champion – Upstox",
-      "C-Club – Open Source Activist",
+      "Technical Writer – Keploy",
+      "Student Dev Champion – UiPath",
+      "Cglug – Open Source Activist",
     ],
   },
 };
@@ -56,6 +55,8 @@ export const Participation = () => {
   return (
     <section id="activities" ref={sectionRef} className="py-20 px-4">
       <div className="container mx-auto">
+
+        {/* TITLE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
             Participation & Activities
@@ -65,91 +66,61 @@ export const Participation = () => {
           </p>
         </div>
 
-        {/* TWO COLUMN LAYOUT */}
         <div className="grid md:grid-cols-2 gap-8">
-          
-          {/* LEFT COLUMN — BIG H&C BOX */}
-          <div
-            className={`glass-card p-6 ${
-              isVisible ? "animate-fade-in-up" : "opacity-0"
-            }`}
-          >
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
-                <data.hackathon.icon className="h-6 w-6 text-primary" />
-              </div>
 
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">{data.hackathon.title}</h3>
+          {/* LEFT LARGE CARD */}
+          <CardBlock 
+            icon={data.hackathon.icon}
+            title={data.hackathon.title}
+            items={data.hackathon.items}
+            isVisible={isVisible}
+          />
 
-                <ul className="space-y-2">
-                  {data.hackathon.items.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                      <span className="text-primary">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN — 2 SMALL STACKED BOXES */}
+          {/* RIGHT TWO SMALL CARDS */}
           <div className="flex flex-col gap-6">
-            
-            {/* Certifications Box */}
-            <div
-              className={`glass-card p-6 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
-                  <data.certifications.icon className="h-6 w-6 text-primary" />
-                </div>
+            <CardBlock 
+              icon={data.certifications.icon}
+              title={data.certifications.title}
+              items={data.certifications.items}
+              isVisible={isVisible}
+            />
 
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold">{data.certifications.title}</h3>
-                  <ul className="space-y-2">
-                    {data.certifications.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Activities Box */}
-            <div
-              className={`glass-card p-6 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
-                  <data.activities.icon className="h-6 w-6 text-primary" />
-                </div>
-
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold">{data.activities.title}</h3>
-                  <ul className="space-y-2">
-                    {data.activities.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+            <CardBlock 
+              icon={data.activities.icon}
+              title={data.activities.title}
+              items={data.activities.items}
+              isVisible={isVisible}
+            />
           </div>
+
         </div>
       </div>
     </section>
+  );
+};
+
+const CardBlock = ({ icon: Icon, title, items, isVisible }) => {
+  return (
+    <div className={`glass-card p-6 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+      
+      {/* ICON + TITLE ROW */}
+      <div className="flex items-center gap-4 mb-4">
+        <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
+          <Icon className="h-6 w-6 text-primary" />
+        </div>
+        <h3 className="text-xl font-semibold">{title}</h3>
+      </div>
+
+      {/* CONTENT BELOW */}
+      <ul className="space-y-2 pl-1">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+            <span className="text-primary">•</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+    </div>
   );
 };
