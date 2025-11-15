@@ -3,10 +3,10 @@ import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section 
-      id="home" 
-      className="min-h-screen flex items-center md:pt-20 pt-10"
-    >
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center pt-10 md:pt-24 px-4"
+      >
       <div className="container mx-auto">
         
         {/* GRID FIXED FOR MOBILE */}
