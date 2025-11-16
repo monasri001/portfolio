@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
+    name:"Multi Agent github PR review System",
+    tech: "Generative AI, Agentic automation",
+    stack: ["Python", "FastAPI", "Streamlit", "LangChain", "CrewAI", "GitHub API"],
+    description: "Built a CrewAI multi-agent system that reviews GitHub PRs using LLaMA models, delivering inline insights through a real-time Streamlit interface.",
+    github: "https://github.com/monasri001/Multi-Agent-Automatic-PR-review-System",
+    status: "Built",
+  },
+  {
     name: "Business Plan Generator using Fine-tuned LLM",
     tech: "Generative AI, RAG",
     stack: ["Python", "Langchain", "Pinecone", "Llama", "FastAPI", "Streamlit"],
@@ -19,14 +27,6 @@ const projects = [
     description:
       "Developed a blockchain-based Web3 DApp for secure electronic health records with AI for real-time threat detection and access control.",
     github: "https://github.com/monasri001/Securing_electronic_health_record",
-  },
-  {
-    name:"Multi Agent github PR review System",
-    tech: "Generative AI, Agentic automation",
-    stack: ["Python", "FastAPI", "Streamlit", "LangChain", "CrewAI", "GitHub API"],
-    description: "Built a CrewAI multi-agent system that reviews GitHub PRs using LLaMA models, delivering inline insights through a real-time Streamlit interface.",
-    github: "https://github.com/monasri001/Multi-Agent-github-PR-review-System",
-    status: "Built",
   },
   {
     name: "Upwork Job Scraper Agent",
