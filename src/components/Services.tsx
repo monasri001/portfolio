@@ -46,7 +46,7 @@ export const Services = () => {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-10 md:py-20 px-4">
+    <section id="services" ref={sectionRef} className="pt-10 md:pb-10 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
